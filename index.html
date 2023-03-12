@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Album-2 Rudy chandra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .overlay:target img {
+            animation: ZoomDanFade 1s;
+        }
+
+        .overlay:target .close {
+            animation: SlideDownFade 1s;
+        }
+
+        @keyframes ZoomDanFade {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes SlideDownFade {
+            0% {
+                opacity: 0;
+                margin-top: -20px;
+            }
+
+            100% {
+                opacity: 1;
+                margin-top: 0;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .Gallery {
+                flex-wrap: wrap;
+            }
+
+            .overlay img {
+                margin-left: 10px;
+            }
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+
+        .overlay {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.699);
+            transition: 2s;
+        }
+
+        .overlay:target {
+            width: auto;
+            height: auto;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .8);
+        }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .Gallery {
+                flex-wrap: wrap;
+            }
+
+            .overlay img {
+                margin-left: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="rud.png" style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>BERANDA</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>FOTO</p>
+        </a>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>TENTANG</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>TERIMAKASIH</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">BERANDA</a>
+            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">TENTANG</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">FOTO</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">TERIMAKASIH</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">TUGAS</span>
+                <p style="font-weight: 100px; font-family: 'Anton', sans-serif;">
+                    LAHAN KERING.
+                </p>
+            </h1>
+            <p>Sistem Informasi Pertanian Jagung Manis.</p>
+            <img src="foto/Logo.png" alt="boy" class="w3-image" width="200" height="200"
+                style="border: 2px rgba(0, 0, 0, .8); border-radius: 50%; box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.856);">
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h1 class="w3-text-light-grey"> KELOMPOK 1</h1>
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                <h2 style="font-weight: 100px; font-family: 'Anton', sans-serif;">NAMA-NAMA KELOMPOK</h2>
+                <ul class="Gallery" style="display: flex; justify-content: center; list-style: none; gap: 3vw;">
+                    <li>
+                        <a href="#gambar-1" style="text-decoration: none; ">
+                            <img src="foto/Angel1.jpeg" alt="Angel" width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);">
+
+                        </a>
+
+
+                        <div class="overlay" id="gambar-1">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; 
+                                top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/Angel.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Angelicha A.D.Blaang
+                                </ul>
+                                <ul> Npm :51220101</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <a href="#gambar-2" style="text-decoration: none; "><img src="foto/Any.jpeg" alt="Any"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);"></a>
+
+
+                        <!-- satu -->
+
+                        <div class="overlay" id="gambar-2">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/anny.jpeg" alt="" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Maria Anisia Hoar Moruk
+                                </ul>
+                                <ul> Npm :51190077</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!-- dua -->
+                    <li>
+                        <a href="#gambar-3" style="text-decoration: none; "><img src="foto/Metri3.jpeg" alt="Angel"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);">
+                        </a>
+
+
+                        <div class="overlay" id="gambar-3">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/Metri.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Demetriana Da Costa
+                                </ul>
+                                <ul> Npm :51220071</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#gambar-4" style="text-decoration: none; "><img src="foto/Rius4.jpeg" alt="Angel"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);"></a>
+
+
+                        <div class="overlay" id="gambar-4">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/Rius.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Gregorius Fallo
+                                </ul>
+                                <ul> Npm : 51220096</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#gambar-5" style="text-decoration: none; "><img src="foto/Tati5.jpeg" alt="Angel"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);"></a>
+
+
+                        <div class="overlay" id="gambar-5">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/Tati.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Angelicha A.D.Blaang
+                                </ul>
+                                <ul> Npm :51220101</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+
+
+                    <li>
+                        <a href="#gambar-6" style="text-decoration: none; "><img src="foto/Yuli6.jpeg" alt="Yuli"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);"></a>
+
+
+                        <div class="overlay" id="gambar-6">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/Yuli.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Yulita Niis
+                                </ul>
+                                <ul> Npm :51220078</ul>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#gambar-7" style="text-decoration: none; "><img src="foto/oci1.jpg" alt="Yuli"
+                                width="140vw" height="140vh" style="border-radius: 50%; border: 3px solid rgb(255, 255, 255); 
+                                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.692);"></a>
+
+
+                        <div class="overlay" id="gambar-7">
+                            <a href="#" class="close"
+                                style="position: absolute; left: 700px; top: 20px;
+                             background-color: maroon; width: 5rem;
+                              height: 1.5rem; padding-left: 15px; color: whitesmoke; border-radius: 5px; text-decoration: none;">x close</a>
+                            <img src="foto/oci.jpeg" alt="Angel" width="500px" height="500px" style="margin-top: 50px; margin-left: 500px; 
+                                border: 4px solid whitesmoke; border-radius: 5px; box-shadow: 3px 3px 5px black;">
+
+                            <div class="ger" style="margin-left: 500px; font-weight: 100px; 
+                                font-family: 'Anton', sans-serif; color: rgb(230, 208, 18); letter-spacing: 2px;">
+                                <ul>
+                                    Nama : Maria oceria mano
+                                </ul>
+                                <ul> Npm :51220077</ul>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <!--                     
+                    <li>PEKERJAAN : MAHASISWA</li>
+                    <li>JURUSAN : TEKNOLOGI INFORMASI</li>
+                    <li>UNIVERSITAS TIMOR</li>
+                    <li>TEMPAT LAHIR : OE`NASI</li>
+                    <li>TANGGAL : 29 JULI-1997</li> -->
+
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey" id="photos">1. PENDAHULUAN</h3>
+            <p class="w3-wide" style="letter-spacing: normal;">Kabupaten Tanah Laut adalah salah satu Kabupaten di
+                Provinsi Kalimantan Selatan yang
+                ditetapkan sebagai lumbung jagung nasional pada tahun 2017 oleh pemerintah pusat.Penghargaan ini
+                diberikan
+                atas keberhasilan Tanah Laut dalam meningkatkan produksi jagung yang mencapai 115 ribu ton pada tahun
+                2016 (60% dariproduksi jagung Kalimantan Selatan).Agribisnis jagung di Kabupaten ini adalah yang
+                terbaik di Kalimantan karena Tanah Laut memiliki pasar jagung,luas tanam dan produksi,dan pabrik pakan
+                ternak sebanyak dua pabrik.Kecamatan Pelaihari adalah salah satu kecamatan di Kabupaten Tanah Laut
+                dengan komonitas unggulan palawija adalah tanaman jagung.Total produksi dari tanaman ini pada tahun
+                2017 adalah sebanyak 32.727 ton dengan luas tanam mencapai 4.270 Ha.</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+            </div>
+            <h3 class="w3-padding-16 w3-text-light-grey">2. PENELITIAN TERDAHULU</h3>
+            <p class="w3-wide">Penelitian-penelitian terdahulu yang berkaitan dengan penelitian disajikan pada
+                Tabel 1.</p>
+            <p class="w3-wide"><img src="foto/tabel.png" alt="tabel">tabel.1</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+            </div>
+            <h3 class="w3-padding-16 w3-text-light-grey">3. METODE PENELITIAN</h3>
+            <p class="w3-wide">Tahapan-tahapan penelitian diuraikan sebagai berikut.</p>
+            <p class="w3-wide" style="letter-spacing: normal; ">
+                <ol>a. Identifikasi masalah Pada tahap ini dilakukan identifikasi masalah mengenai pertanian jagung
+                    manis di
+                    Kecamatan Pelaihari,kemudian kebutuhan dari sistem yang
+                    akan dibangun diana lisa sehingga diperoleh kebutuhan sistem (system requirement).
+                    <br>b. Pengumpulan data Tahap pengumpulan data
+                    mengenai alur sistem informasi pertanian jagung manis dilakukan melalui proses
+                    wawancara dengan pelaku pertanian jagung,yakni pemilik lahan dan pengepul. <br>
+                    c. Perancangan sistem Sistem informasi pertanian jagung manis dirancang menggunakan Entity
+                    Relationship
+                    Diagram
+                    (ERD) dan Data Flow Diagram (DFD).Pembuatan ERD dan DFD mengacu pada. <br>
+                    d. Pembangunan
+                    sistem Sistem dibangun dengan bahasa pemrograman PHP dan database MySQL yang mereferensi. <br>
+                    e. Pengujian system
+
+                </ol>
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey">4. HASIL DAN PEMBAHASAN</h3>
+            <p class="w3-wide" style="letter-spacing: normal;">4.1 Analisa Sistem yang Berjalan Berdasarkan wawancara
+                dengan pemilik lahan,
+                pemantauan perkembangan lahan pertanian dilakukan secara tatap muka,
+                dimana pemilik lahan mendatangi lahan secara langsung dan mendapatkan laporan dari petani.
+                Sistem yang berjalan ini diilustrasikan pada Gambar 1:
+            </p>
+            <p class="w3-wide"><img src="foto/tabel.png" alt="tabel">tabel.1</p>
+            <p class="w3-wide" style="letter-spacing: normal;">4.2 Analisa Sistem yang Diusulkan Analisa sistem yang
+                diusulkan oleh
+                penulis berupa sebuah sistem yang menggunakan sistem informasi untuk pelaporan monitoring lahan jagung
+                di
+                kecamatan pelaihari.Petani cukup mengisi data perkembangan lahan jagung yang disediakan pada form
+                lahan jagung pada aplikasi.Aplikasi otomatis memproses data dan
+                melaporkan kepada pemilik lahan perkembangan lahan jagungnya tanpa harus turun kelapangan untuk bertatap
+                muka kepada petani.
+                Aplikasi juga mengakomodasi pemilik lahan untuk melakukan komunikasi dengan pengepul.
+            </p> <br>
+            <p class="w3-wide">Sistem yang diusulkan diilustrasikan Gambar 2..</p>
+            <p class="w3-wide"><img src="foto/tabel2.png" alt="tabel2">tabel.2</p>
+            <p class="w3-wide">4.3 Perancangan Sistem</p>
+            <p class="w3-wide" style="letter-spacing: normal;"> a. Entity Relationship Diagram (ERD) Rancangan ERD pada
+                sistem ini memiliki delapan entitas atau delapan tabel yang saling berelasi yaitu tabel User, pemilik,
+                pengepul,
+                petani,lahan,detlahan,jenis persediaan,dan permintaan.</p>
+            <br>
+            <p class="w3-wide">Rancangan ERD dapatdilihat pada Gambar 3:</p>
+            <p class="w3-wide"><img src="foto/tabel3.png" alt="tabel2">tabel.3</p>
+            <p class="w3-wide" style="letter-spacing: normal;">b. Data Flow Diagram (DFD) Diagram konteks yang merupakan
+                level tertinggi dari DFD
+                untuk menggambarkan keseluruhan Sistem Informasi Pertanian Jagung Manis dapat dilihat pada Gambar 4.</p>
+            <p class="w3-wide"><img src="foto/tabel4.png" alt="tabel4">tabel.4</p>
+            <p class="w3-wide">4.4 Implementasi Sistem</p>
+            <p class="w3-wide" style="letter-spacing: normal;">1. Implementasi Halaman Beranda Implementasi halaman
+                beranda Sistem Informasi Pertanian
+                Jagung
+                Manis berisikan ucapan selamat datang sesuai pengguna yang login. </p><br>
+            <p class="w3-wide">Tampilannya dapat dilihat pada Gambar 5.</p>
+            <p class="w3-wide"><img src="foto/tabel5.png" alt="tabel5">tabel.5</p>
+            <p class="w3-wide" style="letter-spacing: normal;">2. Implementasi Halaman Tampil Lahan Halaman tampil lahan
+                menyediakan tampilan data lahan
+                yang telah ditambahkan,fitur tambah data,fitur cari,serta fitur edit dan delete bagi data lahan yang
+                telah ada. Tambah data lahan berisikan is lahan,id petani,serta koordinat latitude dan longitude yang
+                kemudian akan tampil jika telah disimpan. </p>
+            <p class="w3-wide" style="letter-spacing: normal;">3. Implementasi Halaman Tampil User Halaman tampil user
+                menyediakan tampilan data user
+                yang telah ditambahkan,fitur tambah data,fitur cari,serta fitur edit dan delete bagi data user yang
+                telah ada. Tambah data user berisikan ID,username,password,email,level,dan nama yang
+                kemudian akan tampil jika telah disimpan. </p>
+            <p class="w3-wide" style="letter-spacing: normal;">4. Implementasi Halaman Tampil Pengepul Halaman tampil
+                pengepul menyediakan tampilan data
+                pengepul yang
+                telah ditambahkan,fitur tambah data,fitur cari,serta fitur edit dan delete bagi data pengepul yang
+                telah ada. Tambah data pengepul berisikan ID pengepul,nama,alamat,telepon,serta latitude dan
+                longitude
+                yang kemudian akan tampil jika telah disimpan.</p>
+            <p class="w3-wide" style="letter-spacing: normal;">5. Implementasi Halaman Tampil PemilikLahan Halaman
+                tampil pemilik lahan menyediakan data
+                tampilan pemilik lahan yang telah ditambahkan,fitur tambah data,fitur cari,serta fitur edit dan
+                delete bagi
+                data pemilik lahan yang telah ada. Tambah data pemilik lahan berisikan ID pemilik,nama pemilik,alamat,
+                telepon, nama pengepul,serta latitude dan longitude yang kemudian akan tampil jika telah disimpan.</p>
+            <p class="w3-wide" style="letter-spacing: normal;">6. Implementasi Halaman Tampil Petani Halaman tampil
+                petani menyediakan tampilan data
+                petani
+                yang
+                telah ditambahkan,fitur tambah data,fitur cari,serta fitur edit dan delete bagi data petani yang
+                telah ada. Tambah data petani berisikan ID petani,namapetani,alamat,dan telepon yang
+                kemudian akan tampil jika telah disimpan.</p>
+
+            <h3 class="w3-padding-16 w3-text-light-grey">4.5 Pembahasan</h3>
+            <p class="w3-wide" style="letter-spacing: normal;">Sistem informasi pertanian jagung dapat digunakan oleh 4
+                (empat) pengguna,yakni admin,
+                pemiliklahan,petani,dan pengepul. Setiap pengguna mempunyai hak akses yang berbeda. Hak
+                akses setiap pengguna dijabarkan sebagai berikut..</p>
+            <br>
+            <p class="w3-wide" style="letter-spacing: normal;">1. Admin dapat mengelola lahan jagung,mengelola user,
+                mengelola pengepul,
+                mengelola pemilik lahan, mengelola petani, mengelola permintaan persediaan, dan mengelola detail lahan.
+                Pengelolaan meliputi tampil,tambah,dan edit. </p>
+
+            <p class="w3-wide" style="letter-spacing: normal;">3. Pemilik lahan dapat mengelola lahan meliputi tampil,
+                tambah,dan edit; melihat data
+                pengepul; mengelola pemilik lahan meliputi tampil dan edit; mengelola petani meliputi tampil,tambah,
+                dan edit;
+                menampilkan data permintaan persedian; dan menampilkan detail lahan.. </p>
+            <p class="w3-wide" style="letter-spacing: normal;"> 4. Petani dapat menampilkan data lahan dan pemiliklahan,
+                mengelola petani meliputi
+                tampil dan
+                edit; mengelola permintaan persediaan meliputi tampil,tambah,dan edit; mengelola2. Pengelola dapat
+                melihat
+                data mengenailahan,pengepul,pemiliklahan,detail lahan. </p>
+            <h3 class="w3-padding-16 w3-text-light-grey">4.6 Pengujian Sistem</h3>
+            <p class="w3-wide">Hasil pengujian sistem informasi pertanian jagung manis menggunakan black box disajikan
+                pada Tabel 2</p>
+            <p class="w3-wide"><img src="foto/tabel6.png" alt="tabel6">tabel.6</p>
+            <h3 class="w3-padding-16 w3-text-light-grey">5. KESIMPULAN</h3>
+            <p class="w3-wide" style="letter-spacing: normal;"> Pembangunan sistem informasi pertanian jagung manis
+                menggunakan bahasa pemrograman PHP
+                dan
+                database MySQL telah berhasil dibangun. Sistem informasi pertanian jagung manis dapat digunakan oleh 4
+                (empat)
+                pengguna,yakni admin,pemiliklahan,petani, dan pengepul.
+                Sistem informasi ini membantu dalam pengelolaan lahan,user,pengepul,pemilik lahan,petani,
+                permintaan persediaan,dan detail lahan,Setiap pengguna mempunyai hak akses yang berbeda dalam
+                pengelolaan ini.
+                Pengujian menggunakan black box juga telah dilakukan dan
+                menunjukkan hasil bahwa semua fungsi dalam sistem telah berjalan dengan baik.</p>
+            <br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br>
+            <h1 class="w3-padding-16 w3-text-light-grey w3-center" id="contact" style="font-size: 70px;">TERIMAKASIH
+            </h1>
+            <!-- <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div><br>
+
+            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey"> -->
+            <!-- <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">0+</span><br>
+                    Partners
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">55+</span><br>
+                    Projects Done
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">89+</span><br>
+                    Happy Clients
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">150+</span><br>
+                    Meetings
+                </div> -->
+            <!-- </div> -->
+
+            <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                <i class="fa fa-download"></i> Download Resume
+            </button> -->
+
+            <!-- Grid for pricing tables -->
+            <!-- <h3 class="w3-padding-16 w3-text-light-grey">Info tambahan</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                        <li class="w3-padding-16">Web Design</li>
+                        <li class="w3-padding-16">Photography</li> -->
+            <!-- <li class="w3-padding-16">5GB Storage</li> -->
+            <!-- <li class="w3-padding-16">Mail Support</li> -->
+            <!-- <li class="w3-padding-16">
+                            <h2>1997</h2>
+                            <span class="w3-opacity">TAHUN</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Masuk</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-half">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">SKIL</li>
+                        <li class="w3-padding-16">Web Design</li>
+                        <li class="w3-padding-16">Photography</li> -->
+            <!-- <li class="w3-padding-16">50GB Storage</li> -->
+            <!-- <li class="w3-padding-16">Endless Support</li> -->
+            <!-- <li class="w3-padding-16">
+                            <h2>JULI</h2>
+                            <span class="w3-opacity">BULAN</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Masuk</button>
+                        </li>
+                    </ul>
+                </div> -->
+            <!-- End Grid/Pricing tables -->
+            <!-- </div> -->
+
+            <!-- Testimonials -->
+            <!-- <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>
+            <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                style="width:80px">
+            <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+            <p>John Doe saved us from a web disaster.</p><br>
+
+            <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                style="width:80px">
+            <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+            <p>No one is better than John Doe.</p> -->
+            <!-- End About Section -->
+            <!-- </div> -->
+
+            <!-- Portfolio Section -->
+            <!-- <div class="w3-padding-64 w3-content" id="photos">
+            <h2 class="w3-text-light-grey">My Photos</h2>
+            <hr style="width:200px" class="w3-opacity"> -->
+
+            <!-- Grid for photos -->
+            <!-- <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <img src="chand.jpg" style="width:100%">
+                    <img src="1651535302352.jpg" style="width:100%">
+                    <img src="1651535315340.jpg" style="width:100%">
+                </div>
+
+                <div class="w3-half">
+                    <img src="hh.jpg" style="width:100%">
+                    <img src="ll.jpg" style="width:100%">
+                    <img src="00.jpg" style="width:100%">
+                </div> -->
+            <!-- End photo grid -->
+            <!-- </div> -->
+            <!-- End Portfolio Section -->
+            <!-- </div> -->
+
+            <!-- Contact Section -->
+            <!-- <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Atambua, Indonesia
+                </p>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telepon: +6282144165539
+                </p>
+                <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:
+                    rudichandra0729.com
+                </p>
+            </div><br>
+            <p>Silahkan mengirim pesan:</p>
+
+            <form action="/action_page.php" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Nama" required name="Nama"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="pesan" required name="Pesan"></p>
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> KIRIM PESAN
+                    </button>
+                </p> -->
+            <!-- </form> -->
+            <!-- End Contact Section -->
+            <!-- </div> -->
+
+            <!-- Footer -->
+            <!-- <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <p class="w3-medium">Powered by RUDY CHANDRA</a></p> -->
+            <!-- End footer -->
+            <!-- </footer> -->
+
+            <!-- END PAGE CONTENT -->
+        </div>
+
+</body>
+
+</html>
